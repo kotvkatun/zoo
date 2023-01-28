@@ -1,22 +1,21 @@
 package animal;
 
 public class Shwainokaras extends Animal {
-    private int q;
-    private boolean healthy;
 
-    public Shwainokaras(boolean isHealthy, int quantity) {
-        healthy = isHealthy;
-        q = quantity;
+
+    public Shwainokaras(String nameOfShawainokaras, boolean isHealthy) {
+        health = isHealthy;
+        name = nameOfShawainokaras;
     }
 
-    public int getQuantity() {
-        return q;
+    public String getName() {
+        return super.getName();
     }
 
     public String toString() {
         return "Shwainokaras{" +
-                "q=" + q +
-                ", healthy=" + healthy +
+                "name=" + name +
+                ", healthy=" + health +
                 '}';
     }
 

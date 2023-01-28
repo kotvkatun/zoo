@@ -1,16 +1,14 @@
 package animal;
 
 public class Slon extends Animal {
-    private String nameOfSlon;
-    private boolean health;
 
-    public Slon(String name, boolean isHealthy) {
-        nameOfSlon = name;
+    public Slon(String nameOfSlon, boolean isHealthy) {
+        name = nameOfSlon;
         health = isHealthy;
     }
 
     public String getNameOfSlon() {
-        return nameOfSlon;
+        return name;
     }
 
     public void makeSound() {
@@ -19,7 +17,7 @@ public class Slon extends Animal {
 
     public String toString() {
         return "Slon{" +
-                "nameOfSlon='" + nameOfSlon + '\'' +
-                '}';
+                "name='" + name + '\'' + ", healthy=" + health +
+        '}';
     }
 }

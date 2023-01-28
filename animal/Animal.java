@@ -2,13 +2,10 @@ package animal;
 
 
 public abstract class Animal {
-    int quantity = 1;
+    public String name;
+    public boolean health;
 
     public Animal() {
-    }
-
-    public int getQuantity() {
-        return quantity;
     }
 
     public abstract String toString();
