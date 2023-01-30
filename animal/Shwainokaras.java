@@ -4,12 +4,12 @@ public class Shwainokaras extends Animal {
 
 
     public Shwainokaras(String nameOfShawainokaras, boolean isHealthy) {
-        health = isHealthy;
         name = nameOfShawainokaras;
+        health = isHealthy;
     }
 
     public String getName() {
-        return super.getName();
+        return name;
     }
 
     public String toString() {

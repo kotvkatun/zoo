@@ -1,22 +1,17 @@
 package staff;
 import animal.Animal;
-public class Govnochist extends Staff {
-    private String name;
-    private int id;
-    private Animal caredFor;
+import cage.Cage;
 
-    public Govnochist(String nameOfGovnochist, int idOfGovnochist, Animal animal) {
+public class Govnochist extends Staff {
+    private Cage assignedCage;
+    public Govnochist(String nameOfGovnochist, int idOfGovnochist, Cage cage) {
         name = nameOfGovnochist;
         id = idOfGovnochist;
-        caredFor = animal;
+        assignedCage = cage;
     }
 
     public String getName() {
         return name;
-    }
-
-    public Animal getCaredFor() {
-        return caredFor;
     }
 
     public int getId() {
