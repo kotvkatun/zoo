@@ -30,5 +30,5 @@ public abstract class Staff {
         }
     }
 
-    public abstract void performCheckup();
+    public abstract void performCheckup(String... a);
 }

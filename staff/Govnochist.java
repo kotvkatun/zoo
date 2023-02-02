@@ -14,7 +14,7 @@ public class Govnochist extends Staff {
         assignedCage = cage;
     }
 
-    public void performCheckup() {
+    public void performCheckup(String... strings) {
         if (this.assignedCage.isClean) {
             System.out.println("Клетка чистая");
         } else {

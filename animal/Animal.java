@@ -6,6 +6,7 @@ public abstract class Animal {
     public boolean health;
 
     public Animal() {
+        health = Math.round(Math.random()) > 0;
     }
 
     public abstract String toString();

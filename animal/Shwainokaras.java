@@ -3,9 +3,8 @@ package animal;
 public class Shwainokaras extends Animal {
 
 
-    public Shwainokaras(String nameOfShwainokaras, boolean isHealthy) {
+    public Shwainokaras(String nameOfShwainokaras) {
         name = nameOfShwainokaras;
-        health = isHealthy;
     }
 
     public String getName() {

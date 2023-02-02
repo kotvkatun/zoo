@@ -2,9 +2,8 @@ package animal;
 
 public class Slon extends Animal {
 
-    public Slon(String nameOfSlon, boolean isHealthy) {
+    public Slon(String nameOfSlon) {
         name = nameOfSlon;
-        health = isHealthy;
     }
 
     public String getNameOfSlon() {
