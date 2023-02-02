@@ -1,8 +1,15 @@
 package cage;
+
 import animal.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cage {
-    private List<Animal> animalNames;
-    public Cage (List<Animal> animalList){}
+    public List<Animal> animalNames = new ArrayList<>();
+    public boolean isClean;
+
+    public Cage(List<Animal> animalList) {
+        isClean = Math.round(Math.random()) > 0;
+    }
 }

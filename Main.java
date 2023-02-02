@@ -14,7 +14,7 @@ public class Main {
         Cage c = new Cage(animalList);
         Govnochist Gena = new Govnochist("Gena", c);
         Govnochist Sleh = new Govnochist("Sleh", c);
-        Staff.printStaffList();
-        System.out.println(Gena.getId());
+        Gena.performCheckup();
+        Sleh.performCheckup();
     }
 }

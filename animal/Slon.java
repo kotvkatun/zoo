@@ -18,6 +18,6 @@ public class Slon extends Animal {
     public String toString() {
         return "Slon{" +
                 "name='" + name + '\'' + ", healthy=" + health +
-        '}';
+                '}';
     }
 }
