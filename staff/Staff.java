@@ -3,9 +3,9 @@ package staff;
 import java.util.HashMap;
 
 public abstract class Staff {
-    public String name;
-    public static HashMap<String, Integer> idList = new HashMap<>();
-    static int idCounter = 0;
+    private String name;
+    private static HashMap<String, Integer> idList = new HashMap<>();
+    private static int idCounter = 0;
 
     public Staff() {
         idCounter++;
@@ -23,9 +23,12 @@ public abstract class Staff {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public static void printStaffList() {
-        for (String i :
-                idList.keySet()) {
+        for (String i : idList.keySet()) {
             System.out.println("name: " + i + " id: " + idList.get(i));
         }
     }

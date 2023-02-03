@@ -3,11 +3,7 @@ package animal;
 public class Slon extends Animal {
 
     public Slon(String nameOfSlon) {
-        name = nameOfSlon;
-    }
-
-    public String getNameOfSlon() {
-        return name;
+        setName(nameOfSlon);
     }
 
     public void makeSound() {
@@ -16,7 +12,7 @@ public class Slon extends Animal {
 
     public String toString() {
         return "Slon{" +
-                "name='" + name + '\'' + ", healthy=" + health +
+                "name='" + getName() + '\'' + ", healthy=" + getHealth() +
                 '}';
     }
 }

@@ -6,12 +6,16 @@ import cage.Cage;
 import java.util.Scanner;
 
 public class Govnochist extends Staff {
-    public Cage assignedCage;
+    private Cage assignedCage;
 
     public Govnochist(String nameOfGovnochist, Cage cage) {
-        name = nameOfGovnochist;
+        setName(nameOfGovnochist);
         assignId();
         assignedCage = cage;
+    }
+
+    public Cage getAssignedCage() {
+        return assignedCage;
     }
 
     public void performCheckup(String... strings) {

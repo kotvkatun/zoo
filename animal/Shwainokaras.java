@@ -4,17 +4,13 @@ public class Shwainokaras extends Animal {
 
 
     public Shwainokaras(String nameOfShwainokaras) {
-        name = nameOfShwainokaras;
-    }
-
-    public String getName() {
-        return name;
+        setName(nameOfShwainokaras);
     }
 
     public String toString() {
         return "Shwainokaras{" +
-                "name=" + name +
-                ", healthy=" + health +
+                "name=" + getName() +
+                ", healthy=" + getHealth() +
                 '}';
     }
 
