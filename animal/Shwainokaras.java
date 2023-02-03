@@ -4,7 +4,7 @@ public class Shwainokaras extends Animal {
 
 
     public Shwainokaras(String nameOfShwainokaras) {
-        setName(nameOfShwainokaras);
+        super(nameOfShwainokaras);
     }
 
     public String toString() {

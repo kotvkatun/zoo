@@ -1,17 +1,16 @@
 package animal;
 
-public class Slon extends Animal {
-
-    public Slon(String nameOfSlon) {
-        super(nameOfSlon);
+public class Barash extends Animal {
+    public Barash(String nameOfBarash) {
+        super(nameOfBarash);
     }
 
     public void makeSound() {
-        System.out.println("Давай родненький");
+        System.out.println("Бээ");
     }
 
     public String toString() {
-        return "Slon{" +
+        return "Barash{" +
                 "name='" + getName() + '\'' + ", healthy=" + getHealth() +
                 '}';
     }

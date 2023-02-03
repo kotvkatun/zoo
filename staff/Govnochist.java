@@ -1,6 +1,5 @@
 package staff;
 
-import animal.Animal;
 import cage.Cage;
 
 import java.util.Scanner;
@@ -19,7 +18,7 @@ public class Govnochist extends Staff {
     }
 
     public void performCheckup(String... strings) {
-        if (this.assignedCage.isClean) {
+        if (this.assignedCage.getIsClean()) {
             System.out.println("Клетка чистая");
         } else {
             System.out.println("Клетка грязная");
@@ -27,7 +26,7 @@ public class Govnochist extends Staff {
             Scanner input = new Scanner(System.in);
             String yesOrNo = input.nextLine();
             if (yesOrNo.startsWith("y")) {
-                assignedCage.isClean = true;
+                assignedCage.setClean(true);
                 System.out.println("Клетка почищена");
             }
         }

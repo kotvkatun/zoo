@@ -5,16 +5,19 @@ public abstract class Animal {
     private String name;
     private boolean health;
 
-    public Animal() {
+    public Animal(String animalName) {
+        name = animalName;
         health = Math.round(Math.random()) > 0;
     }
 
     public String getName() {
         return name;
     }
+
     public boolean getHealth() {
         return health;
     }
+
     public void setName(String name) {
         this.name = name;
     }

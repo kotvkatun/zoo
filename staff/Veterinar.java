@@ -11,11 +11,12 @@ public class Veterinar extends Staff {
         setName(nameOfVeterinar);
         patients = patientsOfVeterinar;
     }
+
     public void performCheckup(String... patientName) {
-        for (Animal animal : patients){
-            for (String name : patientName){
-                if (name.equals(animal.getName())){
-                    if(animal.getHealth()){
+        for (Animal animal : patients) {
+            for (String name : patientName) {
+                if (name.equals(animal.getName())) {
+                    if (animal.getHealth()) {
                         System.out.println(name + " здоров");
                     } else {
                         System.out.println(name + " болен");

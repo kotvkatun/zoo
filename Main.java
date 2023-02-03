@@ -1,21 +1,11 @@
-import animal.*;
-import cage.Cage;
-import staff.*;
+import zoo.Zoo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.FileNotFoundException;
 
 public class Main {
-    public static void main(String[] args) {
-        Slon s = new Slon("Васёк");
-        Shwainokaras shwainokaras = new Shwainokaras("Швайнокарась");
-        ArrayList<Animal> animalList = new ArrayList<>();
-        animalList.add(s);
-        animalList.add(shwainokaras);
-        Cage c = new Cage(animalList);
-        Govnochist Gena = new Govnochist("Gena", c);
-        Govnochist Sleh = new Govnochist("Sleh", c);
-        Veterinar Lesha = new Veterinar("Леша", animalList);
-        Lesha.performCheckup("Васёк");
+    public static void main(String[] args) throws FileNotFoundException {
+        Zoo z = new Zoo();
+        z.makeZoo();
+        z.printCages();
     }
 }
