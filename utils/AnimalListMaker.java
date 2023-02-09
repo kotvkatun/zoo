@@ -3,6 +3,8 @@ package utils;
 import animal.*;
 import staff.Staff;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,35 +36,13 @@ public class AnimalListMaker {
         return staffListSkeleton;
     }
 
-    public static List<Animal> makeAnimalList(HashMap<Class<?>, List<String>> animalNames) {
+    public static List<Animal> makeAnimalList(HashMap<Class<?>, List<String>> animalNamesMap, int order) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException{
         List<Animal> list = new ArrayList<>();
-        int listLength = 4;
-        switch (randomNumber.nextInt(SPECIES)) {
-            case 0 -> {
-                for (int i = 0; i < listLength; i++) {
-                    list.add(new Slon(randomName(animalNames)));
-                }
-            }
-            case 1 -> {
-                for (int i = 0; i < listLength; i++) {
-                    list.add(new Shwainokaras(randomName(animalNames)));
-                }
-            }
-            case 2 -> {
-                for (int i = 0; i < listLength; i++) {
-                    list.add(new Barash(randomName(animalNames)));
-                }
-            }
-            case 3 -> {
-                for (int i = 0; i < listLength; i++) {
-                    list.add(new Manul(randomName(animalNames)));
-                }
-            }
-            case 4 -> {
-                for (int i = 0; i < listLength; i++) {
-                    list.add(new Kaban(randomName(animalNames)));
-                }
-            }
+        Class<?> c =(Class<?>) animalNamesMap.keySet().toArray()[order];
+        Constructor<?> constructor = c.getConstructor(String.class);
+        for (int i = 0; i < animalNamesMap.get(c).size(); i++) {
+            String name = animalNamesMap.get(c).get(i);
+            list.add((Animal) constructor.newInstance(name));
         }
         return list;
     }
