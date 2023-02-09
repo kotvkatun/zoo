@@ -2,81 +2,58 @@ package zoo;
 
 import animal.*;
 import cage.Cage;
+import staff.*;
+import utils.AnimalListMaker;
+import utils.NameParser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
+import static utils.RandomName.randomName;
+import static utils.NameParser.*;
+
 public class Zoo {
+    private final static List<Class<? extends Animal>> animalClasses = new ArrayList<>(List.of(Kaban.class, Manul.class, Shwainokaras.class, Slon.class, Barash.class));
+    private final static List<Class<? extends Staff>> staffClasses = new ArrayList<>(List.of(Govnochist.class, TicketOffice.class, Veterinar.class, Security.class));
     private final Random randomNumber = new Random();
-    private final List<String> names = new ArrayList<>();
-    private final int SPECIES = 5;
+    private HashMap<Class<?>, List<String>> animalNames = new HashMap<>();
+    private HashMap<Class<?>, List<String>> staffNames = new HashMap<>();
+
     private final int STAFF_ROLES = 4;
     private static final List<String> nameList = new ArrayList<>();
     private List<Cage> cages = new ArrayList<>();
 
-    public Zoo() throws FileNotFoundException {
-        File namesTXT = new File("resource/names.txt");
-        Scanner fileScan = new Scanner(namesTXT);
-        names.addAll(Arrays.asList(fileScan.nextLine().split(" ")));
-        fileScan.close();
+    public static List<Class<? extends Animal>> getAnimalClasses() {
+        return animalClasses;
     }
 
-    private String randomName() {
-        int nameNum = randomNumber.nextInt(names.size());
-        String randomName = names.get(nameNum);
-        names.remove(nameNum);
-        return randomName;
+    public static List<Class<? extends Staff>> getStaffClasses() {
+        return staffClasses;
     }
 
-    private List<Animal> makeAnimalList() {
-        List<Animal> list = new ArrayList<>();
-        int listLength = randomNumber.nextInt(4) + 1;
-        switch (randomNumber.nextInt(5)) {
-            case 0 -> {
-                for (int i = 0; i <= listLength; i++) {
-                    list.add(new Slon(randomName()));
-                }
-            }
-            case 1 -> {
-                for (int i = 0; i <= listLength; i++) {
-                    list.add(new Shwainokaras(randomName()));
-                }
-            }
-            case 2 -> {
-                for (int i = 0; i <= listLength; i++) {
-                    list.add(new Barash(randomName()));
-                }
-            }
-            case 3 -> {
-                for (int i = 0; i <= listLength; i++) {
-                    list.add(new Manul(randomName()));
-                }
-            }
-            case 4 -> {
-                for (int i = 0; i <= listLength; i++) {
-                    list.add(new Kaban(randomName()));
-                }
-            }
-        }
-        return list;
+    public Zoo() {
+        animalNames = loadNames("animal");
+        staffNames = loadNames("staff");
     }
 
-    private Cage makeCage() {
-        return new Cage(makeAnimalList());
-    }
 
-    public void makeZoo() {
-        for (int i = 0; i < 5; i++) {
-            cages.add(makeCage());
-        }
-    }
+//    private Cage makeCage() {
+//        return new Cage(makeAnimalList());
+//    }
+//
+//    public void makeZoo() {
+//        for (int i = 0; i < 5; i++) {
+//            cages.add(makeCage());
+//        }
+//    }
 
     public void printCages() {
         int i = 1;
         for (Cage c : cages) {
             System.out.println("Клетка номер " + i);
-            for (Animal a : c.getAnimalNames()) {
+            for (Animal a : c.getAnimalList()) {
                 System.out.print(a.getName() + " " + a.getClass().toString() + " | ");
             }
             System.out.println();

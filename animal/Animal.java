@@ -6,7 +6,7 @@ public abstract class Animal {
     private boolean health;
 
     public Animal(String animalName) {
-        name = animalName;
+        this.name = animalName;
         health = Math.round(Math.random()) > 0;
     }
 

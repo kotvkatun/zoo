@@ -6,8 +6,9 @@ public abstract class Staff {
     private String name;
     private static HashMap<String, Integer> idList = new HashMap<>();
     private static int idCounter = 0;
-
-    public Staff() {
+    public Staff(){}
+    public Staff(String nameOfStaff) {
+        this.name = nameOfStaff;
         idCounter++;
     }
 

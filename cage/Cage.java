@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cage {
-    private List<Animal> animalNames = new ArrayList<>();
+    private List<Animal> animalList = new ArrayList<>();
     private boolean isClean;
 
     public Cage(List<Animal> animalList) {
         isClean = Math.round(Math.random()) > 0;
-        animalNames = animalList;
+        this.animalList = animalList;
     }
 
-    public List<Animal> getAnimalNames() {
-        return animalNames;
+    public List<Animal> getAnimalList() {
+        return animalList;
     }
 
     public boolean getIsClean() {

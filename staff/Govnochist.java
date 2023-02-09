@@ -8,7 +8,7 @@ public class Govnochist extends Staff {
     private Cage assignedCage;
 
     public Govnochist(String nameOfGovnochist, Cage cage) {
-        setName(nameOfGovnochist);
+        super(nameOfGovnochist);
         assignId();
         assignedCage = cage;
     }

@@ -8,7 +8,7 @@ public class Veterinar extends Staff {
     private List<Animal> patients;
 
     public Veterinar(String nameOfVeterinar, List<Animal> patientsOfVeterinar) {
-        setName(nameOfVeterinar);
+        super(nameOfVeterinar);
         patients = patientsOfVeterinar;
     }
 

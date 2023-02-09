@@ -1,3 +1,5 @@
 /.idea
 /zoo.iml
 /out
+/cache/animal_names_cache.txt
+/cache/staff_names_cache.txt
