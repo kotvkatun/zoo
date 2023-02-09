@@ -3,16 +3,13 @@ package zoo;
 import animal.*;
 import cage.Cage;
 import staff.*;
-import utils.AnimalListMaker;
-import utils.NameParser;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
-import static utils.RandomName.randomName;
-import static utils.NameParser.*;
+import static utils.NameParser.loadNames;
 
 public class Zoo {
     private final static List<Class<? extends Animal>> animalClasses = new ArrayList<>(List.of(Kaban.class, Manul.class, Shwainokaras.class, Slon.class, Barash.class));

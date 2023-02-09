@@ -13,23 +13,27 @@ import static utils.RandomName.randomName;
 public class AnimalListMaker {
     private final static Random randomNumber = new Random();
     private final static int SPECIES = 5;
-    private static int randomCageSize(){
+
+    private static int randomCageSize() {
         return randomNumber.nextInt(1, 5);
     }
+
     public static HashMap<Class<?>, Integer> makeAnimalListSkeleton(List<Class<? extends Animal>> classList) {
         HashMap<Class<?>, Integer> animalListSkeleton = new HashMap<>();
-        for (Class<?> c: classList){
+        for (Class<?> c : classList) {
             animalListSkeleton.put(c, randomCageSize());
         }
         return animalListSkeleton;
     }
-    public static HashMap<Class<?>, Integer> makeStaffListSkeleton(List<Class<? extends Staff>> classList){
+
+    public static HashMap<Class<?>, Integer> makeStaffListSkeleton(List<Class<? extends Staff>> classList) {
         HashMap<Class<?>, Integer> staffListSkeleton = new HashMap<>();
-        for (Class<?> c: classList){
+        for (Class<?> c : classList) {
             staffListSkeleton.put(c, randomNumber.nextInt(1, 3));
         }
         return staffListSkeleton;
     }
+
     public static List<Animal> makeAnimalList(HashMap<Class<?>, List<String>> animalNames) {
         List<Animal> list = new ArrayList<>();
         int listLength = 4;
