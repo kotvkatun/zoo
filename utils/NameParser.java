@@ -1,5 +1,6 @@
 package utils;
 
+import zoo.Entity;
 import zoo.Zoo;
 
 import java.io.*;
@@ -16,10 +17,10 @@ public class NameParser {
     private static final HashMap<Class<?>, Integer> animalListSkeleton = makeAnimalListSkeleton(Zoo.getAnimalClasses());
     private static final HashMap<Class<?>, Integer> staffListSkeleton = makeStaffListSkeleton(Zoo.getStaffClasses());
 
-    public static HashMap<Class<?>, List<String>> loadNames(String animal_or_staff) {
-        if (animal_or_staff.startsWith("a")) {
+    public static HashMap<Class<?>, List<String>> loadNames(Entity entity) {
+        if (entity.equals(Entity.ANIMAL)) {
             return makeNameMap("animal_names", animalListSkeleton);
-        } else if (animal_or_staff.startsWith("s")) {
+        } else if (entity.equals(Entity.STAFF)) {
             return makeNameMap("staff_names", staffListSkeleton);
         }
         return null;

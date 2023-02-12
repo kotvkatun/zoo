@@ -9,6 +9,7 @@ public class Veterinar extends Staff {
 
     public Veterinar(String nameOfVeterinar, List<Animal> patientsOfVeterinar) {
         super(nameOfVeterinar);
+        assignId();
         patients = patientsOfVeterinar;
     }
 

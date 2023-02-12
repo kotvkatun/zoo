@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public abstract class Staff {
     private String name;
-    private static HashMap<String, Integer> idList = new HashMap<>();
+    private static HashMap<Integer, String> idList = new HashMap<>();
     private static int idCounter = 0;
 
     public Staff() {
@@ -15,12 +15,8 @@ public abstract class Staff {
         idCounter++;
     }
 
-    void assignId() {
-        idList.put(this.name, idCounter);
-    }
-
-    public int getId() {
-        return idList.get(this.name);
+    protected void assignId() {
+        idList.put(idCounter, this.name);
     }
 
     public String getName() {
@@ -32,8 +28,8 @@ public abstract class Staff {
     }
 
     public static void printStaffList() {
-        for (String i : idList.keySet()) {
-            System.out.println("name: " + i + " id: " + idList.get(i));
+        for (Integer id : idList.keySet()) {
+            System.out.println("name: " + idList.get(id) + " id: " + id);
         }
     }
 

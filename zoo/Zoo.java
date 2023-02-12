@@ -33,8 +33,8 @@ public class Zoo {
     }
 
     public Zoo() {
-        animalNames = loadNames("animal");
-        staffNames = loadNames("staff");
+        animalNames = loadNames(Entity.ANIMAL);
+        staffNames = loadNames(Entity.STAFF);
     }
 
 
@@ -50,10 +50,10 @@ public class Zoo {
 
     public void printCages() {
         int i = 1;
-        for (Cage c : cages) {
+        for (Cage cage : cages) {
             System.out.println("Клетка номер " + i);
-            for (Animal a : c.getAnimalList()) {
-                System.out.print(a.getName() + " " + a.getClass().toString() + " | ");
+            for (Animal animal : cage.getAnimalList()) {
+                System.out.print(animal.getName() + " " + animal.getClass().toString() + " | ");
             }
             System.out.println();
             i++;
